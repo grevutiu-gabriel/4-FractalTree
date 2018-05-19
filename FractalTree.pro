@@ -144,11 +144,11 @@ CONFIG(release, debug|release) {
     macx {
         QMAKE_POST_LINK += 'macdeployqt $${OUT_PWD}/$${TARGET}.app && rm $${OUT_PWD}/*.o && rm $${OUT_PWD}/Makefile'
     }
-    unix:!macx {
-        QMAKE_POST_LINK += 'rm $${OUT_PWD}/*.o && rm $${OUT_PWD}/Makefile'
-        QMAKE_LFLAGS += -static
-        QMAKE_LFLAGS += -static-libgcc
-        QMAKE_LFLAGS += -static-libstdc++
+    #unix:!macx {
+    #    QMAKE_POST_LINK += 'rm $${OUT_PWD}/*.o && rm $${OUT_PWD}/Makefile'
+    #    QMAKE_LFLAGS += -static
+    #    QMAKE_LFLAGS += -static-libgcc
+    #    QMAKE_LFLAGS += -static-libstdc++
     }
     win32 {
         TARGET_PATH = $${OUT_PWD}/release/$${TARGET}.exe
